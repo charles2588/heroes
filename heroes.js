@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
 
-const port = 8080;
+const port = 5000;
 const app = express();
 app.use(bodyParser.json());
 
@@ -79,5 +79,6 @@ app.post('/hero/**', (req, res) => {
 
 app.use('/img', express.static(path.join(__dirname,'img')));
 
+
 console.log(`Heroes service listening on port ${port}`);
-app.listen(port);
+app.listen(process.env.PORT || port);
