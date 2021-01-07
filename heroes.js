@@ -1,3 +1,5 @@
+const ratelimit = require('./middlewares/rateLimiter');
+
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
@@ -5,6 +7,7 @@ const bodyParser = require('body-parser');
 const port = 5000;
 const app = express();
 app.use(bodyParser.json());
+app.use(ratelimit);
 
 const powers = [
   { id: 1, name: 'flying' },
