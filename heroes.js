@@ -6,6 +6,9 @@ const bodyParser = require('body-parser');
 
 const port = 5000;
 const app = express();
+
+var cors = require('cors');
+
 app.use(bodyParser.json());
 app.use(ratelimit);
 
@@ -52,7 +55,12 @@ const heroes = [
   }
 ];
 
-app.get('/heroes', (req, res) => {
+var corsOptions = {
+  origin: '*',
+  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+}
+
+app.get('/heroes',cors(corsOptions), (req, res) => {
   console.log('Returning heroes list');
   res.send(heroes);
 });
