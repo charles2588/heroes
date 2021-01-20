@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Charles Gomes</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <style>
+	html,body {
+	  position: relative; 
+	  height:100%;
+	}
+
+
+
+	.icon-bar {
+	position: fixed;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+	}
+
+
+  .container-fluid{
+    padding-left: 5%;
+    padding-top: 5%;
+  }
+
+	.icon-bar a {
+	display: block;
+	text-align: center;
+	padding: 16px;
+	transition: all 0.3s ease;  
+	color: white;
+	font-size: 20px;
+	}
+
+	.icon-bar a:hover {
+	background-color: #000;
+	}
+
+	.facebook {
+	background: #3B5998;
+	color: white;
+	}
+
+	.twitter {
+	background: #55ACEE;
+	color: white;
+	}
+
+	.google {
+	background: #dd4b39;
+	color: white;
+	}
+
+	.linkedin {
+	background: #007bb5;
+	color: white;
+	}
+
+	.youtube {
+	background: #bb0000;
+	color: white;
+	}
+
+  .medium {
+  background: #000000;
+  color: black;
+  }
+
+  .stackoverflow {
+  background: rgba(0,0,0,0.53);
+  color: white;
+  }
+  </style>
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+	<script type="text/javascript">
+		var settings = {
+		  "url": "https://tictop.herokuapp.com/heroes",
+		  //"url": "http://localhost:5000/heroes",
+		  "method": "GET",
+		  "timeout": 0,
+		};
+
+		$.ajax(settings).done(function (response) {
+		  console.log(response);
+		});
+	</script>>
+<div class="icon-bar">
+  <a href="https://www.facebook.com/charles.c.gomes.1/" class="facebook"><i class="fa fa-facebook"></i></a> 
+  <a href="https://twitter.com/charles2588" class="twitter"><i class="fa fa-twitter"></i></a> 
+  <!--<a href="#" class="google"><i class="fa fa-google"></i></a> -->
+  <a href="https://www.linkedin.com/in/charles-gomes-b929792b/" class="linkedin"><i class="fa fa-linkedin"></i></a>
+  <a href="https://medium.com/@charles2588" class="medium"><i class="fa fa-medium"></i></a>
+  <a href="https://stackoverflow.com/users/4725197/charles-gomes" class="stackoverflow"><i class="fa fa-stack-overflow"></i></a>
+  <!--<a href="#" class="youtube"><i class="fa fa-youtube"></i></a>--> 
+</div>
+<header class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="#aboutme">About Me</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#work">Work</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#contact">Contact</a>
+    </li>
+  </ul>
+</header>
+
+<div id="aboutme" class="container-fluid  bg-info">
+	<div class="row">
+		<div class="col mx-auto">
+			<div class="row row-cols-1 row-cols-md-2 g-4">
+			  <div class="col">
+			    <div class="card">
+			      <img
+			        src="https://mdbootstrap.com/img/new/standard/city/041.jpg"
+			        class="card-img-top"
+			        alt="..."
+			      />
+			      <div class="card-body">
+			        <h5 class="card-title">Card title</h5>
+			        <p class="card-text">
+			          This is a longer card with supporting text below as a natural lead-in to
+			          additional content. This content is a little bit longer.
+			        </p>
+			      </div>
+			    </div>
+			  </div>
+			  <div class="col">
+			    <div class="card">
+			      <img
+			        src="https://mdbootstrap.com/img/new/standard/city/042.jpg"
+			        class="card-img-top"
+			        alt="..."
+			      />
+			      <div class="card-body">
+			        <h5 class="card-title">Card title</h5>
+			        <p class="card-text">
+			          This is a longer card with supporting text below as a natural lead-in to
+			          additional content. This content is a little bit longer.
+			        </p>
+			      </div>
+			    </div>
+			  </div>
+			  <div class="col">
+			    <div class="card">
+			      <img
+			        src="https://mdbootstrap.com/img/new/standard/city/043.jpg"
+			        class="card-img-top"
+			        alt="..."
+			      />
+			      <div class="card-body">
+			        <h5 class="card-title">Card title</h5>
+			        <p class="card-text">
+			          This is a longer card with supporting text below as a natural lead-in to
+			          additional content.
+			        </p>
+			      </div>
+			    </div>
+			  </div>
+			  <div class="col">
+			    <div class="card">
+			      <img
+			        src="https://mdbootstrap.com/img/new/standard/city/044.jpg"
+			        class="card-img-top"
+			        alt="..."
+			      />
+			      <div class="card-body">
+			        <h5 class="card-title">Card title</h5>
+			        <p class="card-text">
+			          This is a longer card with supporting text below as a natural lead-in to
+			          additional content. This content is a little bit longer.
+			        </p>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="work" class="container-fluid  bg-warning">
+	<div class="row">
+		<div class="col mx-auto">
+			<div class="row row-cols-1 row-cols-md-2 g-4">
+			  <div class="col">
+			    <div class="card">
+			      <img
+			        src="https://mdbootstrap.com/img/new/standard/city/041.jpg"
+			        class="card-img-top"
+			        alt="..."
+			      />
+			      <div class="card-body">
+			        <h5 class="card-title">Card title</h5>
+			        <p class="card-text">
+			          This is a longer card with supporting text below as a natural lead-in to
+			          additional content. This content is a little bit longer.
+			        </p>
+			      </div>
+			    </div>
+			  </div>
+			  <div class="col">
+			    <div class="card">
+			      <img
+			        src="https://mdbootstrap.com/img/new/standard/city/042.jpg"
+			        class="card-img-top"
+			        alt="..."
+			      />
+			      <div class="card-body">
+			        <h5 class="card-title">Card title</h5>
+			        <p class="card-text">
+			          This is a longer card with supporting text below as a natural lead-in to
+			          additional content. This content is a little bit longer.
+			        </p>
+			      </div>
+			    </div>
+			  </div>
+			  <div class="col">
+			    <div class="card">
+			      <img
+			        src="https://mdbootstrap.com/img/new/standard/city/043.jpg"
+			        class="card-img-top"
+			        alt="..."
+			      />
+			      <div class="card-body">
+			        <h5 class="card-title">Card title</h5>
+			        <p class="card-text">
+			          This is a longer card with supporting text below as a natural lead-in to
+			          additional content.
+			        </p>
+			      </div>
+			    </div>
+			  </div>
+			  <div class="col">
+			    <div class="card">
+			      <img
+			        src="https://mdbootstrap.com/img/new/standard/city/044.jpg"
+			        class="card-img-top"
+			        alt="..."
+			      />
+			      <div class="card-body">
+			        <h5 class="card-title">Card title</h5>
+			        <p class="card-text">
+			          This is a longer card with supporting text below as a natural lead-in to
+			          additional content. This content is a little bit longer.
+			        </p>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="contact" class="container-fluid bg-success">
+	<div class="row">
+		<div class="col mx-auto">
+			<div class="row row-cols-1 row-cols-md-2 g-4">
+			  <div class="col">
+			    <div class="card">
+			      <img
+			        src="https://mdbootstrap.com/img/new/standard/city/041.jpg"
+			        class="card-img-top"
+			        alt="..."
+			      />
+			      <div class="card-body">
+			        <h5 class="card-title">Card title</h5>
+			        <p class="card-text">
+			          This is a longer card with supporting text below as a natural lead-in to
+			          additional content. This content is a little bit longer.
+			        </p>
+			      </div>
+			    </div>
+			  </div>
+			  <div class="col">
+			    <div class="card">
+			      <img
+			        src="https://mdbootstrap.com/img/new/standard/city/042.jpg"
+			        class="card-img-top"
+			        alt="..."
+			      />
+			      <div class="card-body">
+			        <h5 class="card-title">Card title</h5>
+			        <p class="card-text">
+			          This is a longer card with supporting text below as a natural lead-in to
+			          additional content. This content is a little bit longer.
+			        </p>
+			      </div>
+			    </div>
+			  </div>
+			  <div class="col">
+			    <div class="card">
+			      <img
+			        src="https://mdbootstrap.com/img/new/standard/city/043.jpg"
+			        class="card-img-top"
+			        alt="..."
+			      />
+			      <div class="card-body">
+			        <h5 class="card-title">Card title</h5>
+			        <p class="card-text">
+			          This is a longer card with supporting text below as a natural lead-in to
+			          additional content.
+			        </p>
+			      </div>
+			    </div>
+			  </div>
+			  <div class="col">
+			    <div class="card">
+			      <img
+			        src="https://mdbootstrap.com/img/new/standard/city/044.jpg"
+			        class="card-img-top"
+			        alt="..."
+			      />
+			      <div class="card-body">
+			        <h5 class="card-title">Card title</h5>
+			        <p class="card-text">
+			          This is a longer card with supporting text below as a natural lead-in to
+			          additional content. This content is a little bit longer.
+			        </p>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+		</div>
+	</div>
+</div>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-bottom">  
+</nav>
+</body>
+</html>
