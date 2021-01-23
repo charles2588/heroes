@@ -35,7 +35,6 @@ const client = new Client({
     ssl: true
 });
 
-client.connect();
 
 const query = `SELECT * FROM img_src`;
 
@@ -52,6 +51,8 @@ var corsOptions = {
 
 app.get('/heroes',(req, res) => {
   console.log('Returning heroes list');
+  client.connect();
+
   client.query(query, (err, dbres) => {
     if (err) {
         console.error(err);
