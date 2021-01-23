@@ -13,6 +13,7 @@ var cors = require('cors');
 
 app.use(bodyParser.json());
 app.use(ratelimit);
+app.use(cors());
 
 const powers = [
   { id: 1, name: 'flying' },
@@ -44,6 +45,7 @@ console.log(heroes);
 
 var corsOptions = {
   origin: 'https://charles2588.github.io',
+
   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 }
 
