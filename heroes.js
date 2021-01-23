@@ -4,6 +4,8 @@ const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
 
+process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = 0;
+
 const port = 5000;
 const app = express();
 
@@ -20,40 +22,25 @@ const powers = [
   { id: 5, name: 'mind reading' }
 ];
 
-const heroes = [
-  {
-      id: 1,
-      type: 'spider-dog',
-      displayName: 'Cooper',
-      powers: [1, 4],
-      img: 'cooper.jpg',
-      busy: false
-  },
-  {
-      id: 2,
-      type: 'flying-dogs',
-      displayName: 'Jack & Buddy',
-      powers: [2, 5],
-      img: 'jack_buddy.jpg',
-      busy: false
-  },
-  {
-      id: 3,
-      type: 'dark-light-side',
-      displayName: 'Max & Charlie',
-      powers: [3, 2],
-      img: 'max_charlie.jpg',
-      busy: false
-  },
-  {
-      id: 4,
-      type: 'captain-dog',
-      displayName: 'Rocky',
-      powers: [1, 5],
-      img: 'rocky.jpg',
-      busy: false
-  }
-];
+const { Client } = require('pg');
+
+const client = new Client({
+    user: 'yaodugmpxxawfx',
+    host: 'ec2-35-173-114-25.compute-1.amazonaws.com',
+    database: 'dc6kl7ddmp1onp',
+    password: '***REMOVED***',
+    port: 5432,
+    ssl: true
+});
+
+client.connect();
+
+const query = `SELECT * FROM img_src`;
+
+const heroes = ""
+
+console.log(heroes);
+
 
 var corsOptions = {
   origin: '*',
@@ -62,7 +49,16 @@ var corsOptions = {
 
 app.get('/heroes',cors(corsOptions), (req, res) => {
   console.log('Returning heroes list');
-  res.send(heroes);
+  client.query(query, (err, dbres) => {
+    if (err) {
+        console.error(err);
+        return;
+    }
+    console.log('Rows from table successfully read.');
+    res.send(dbres.rows);
+    client.end();
+  });
+  
 });
 
 app.get('/powers', (req, res) => {
