@@ -14,12 +14,8 @@ var cors = require('cors');
 app.use(bodyParser.json());
 app.use(ratelimit);
 app.use(cors());
-<<<<<<< HEAD
 
 console.log(process.env.DATABASE_URL)
-=======
->>>>>>> 3552e2ce8248efc312ce6e20ef55c8402fbe7064
-
 const powers = [
   { id: 1, name: 'flying' },
   { id: 2, name: 'teleporting' },
@@ -31,17 +27,10 @@ const powers = [
 const { Client } = require('pg');
 
 const client = new Client({
-<<<<<<< HEAD
     user: process.env.DB_USER,
     host: process.env.DB_HOST,
     database: process.env.DB_DBNAME,
     password: process.env.DB_PASS,
-=======
-    user: 'yaodugmpxxawfx',
-    host: 'ec2-35-173-114-25.compute-1.amazonaws.com',
-    database: 'dc6kl7ddmp1onp',
-    password: '***REMOVED***',
->>>>>>> 3552e2ce8248efc312ce6e20ef55c8402fbe7064
     port: 5432,
     ssl: true
 });
