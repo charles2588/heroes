@@ -43,7 +43,7 @@ console.log(heroes);
 
 
 var corsOptions = {
-  origin: '*',
+  origin: 'https://charles2588.github.io',
   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 }
 
