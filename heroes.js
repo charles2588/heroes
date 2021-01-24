@@ -24,7 +24,15 @@ const powers = [
   { id: 5, name: 'mind reading' }
 ];
 
-const { Client } = require('pg');
+const { Pool, Client } = require('pg')
+connectionString = "postgresql://"+ process.env.DB_USER + ":" + process.env.DB_PASS + "@" + process.env.DB_HOST + ":5432/" + process.env.DB_DBNAME + "?ssl=true"
+console.log(connectionString);
+
+const pool = new Pool({
+  connectionString,
+})
+
+
 
 const client = new Client({
     user: process.env.DB_USER,
@@ -51,17 +59,21 @@ var corsOptions = {
 
 app.get('/heroes',(req, res) => {
   console.log('Returning heroes list');
-  client.connect();
 
-  client.query(query, (err, dbres) => {
-    if (err) {
-        console.error(err);
-        return;
+  pool.connect(function(err, client, done) {
+    if(err) {
+      return console.error('connexion error', err);
     }
-    console.log('Rows from table successfully read.');
-    res.send(dbres.rows);
-    client.end();
-  });
+    client.query(query, function(err, result) {
+      // call `done()` to release the client back to the pool
+      done();
+  
+      if(err) {
+        return console.error('error running query', err);
+      }
+      res.send(result.rows);
+    });
+  });  
   
 });
 
