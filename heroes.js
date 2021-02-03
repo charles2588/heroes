@@ -10,10 +10,14 @@ const port = 5000;
 const app = express();
 
 var cors = require('cors');
+var compression = require('compression');//for compressing the response suggested by chromedevtools
 
 app.use(bodyParser.json());
 app.use(ratelimit);
 app.use(cors());
+
+// compress all responses
+app.use(compression())
 
 console.log(process.env.DATABASE_URL)
 const powers = [
